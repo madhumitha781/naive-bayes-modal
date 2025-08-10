@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Naive Bayes Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Naive Bayes Prediction</h1>
+    <form action="/predict" method="POST">
+        {% for i in range(1, 5) %}  <!-- Change '5' to number of features -->
+            <label>Feature {{ i }}:</label>
+            <input type="number" step="any" name="feature{{ i }}" required><br>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
